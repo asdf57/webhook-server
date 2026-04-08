@@ -1,0 +1,29 @@
+[
+  {
+    "id": "concourse",
+    "execute-command": "/app/concourse_handler",
+    "command-working-directory": "/app",
+    "pass-arguments-to-command": [
+      {
+        "source": "url",
+        "name": "pipeline"
+      },
+      {
+        "source": "url",
+        "name": "resource"
+      },
+      {
+        "source": "payload",
+        "name": "head_commit.id"
+      },
+      {
+        "source": "payload",
+        "name": "pusher.name"
+      },
+      {
+        "source": "payload",
+        "name": "pusher.email"
+      }
+    ]
+  }
+]
