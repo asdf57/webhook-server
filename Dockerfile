@@ -4,10 +4,9 @@ WORKDIR /app
 
 COPY run.sh .
 COPY hooks.json .
-COPY test.sh .
 COPY handlers ./handlers
 
-RUN chmod +x run.sh test.sh
+RUN chmod +x run.sh
 
 RUN apk update && apk add netcat-openbsd bash openssh go git
 
